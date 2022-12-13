@@ -1,3 +1,6 @@
+//primera preentrega
+
+
 let producto = "";
 let almohadones = 100;
 let toallas = 100;
