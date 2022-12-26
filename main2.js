@@ -1,3 +1,5 @@
+//segunda preentrega
+
 class Productos {
     constructor(codigo, nombre, categoria, precio, color, stock, sale) {
         this.codigo = codigo;
@@ -105,5 +107,5 @@ if ((preguntaCompra = true)) {
    
 }
 
-console.log ("Muestra efecto en stock")
+    console.log ("Muestra efecto en stock")
     console.log(productos);
