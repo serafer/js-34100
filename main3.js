@@ -33,48 +33,20 @@ class Productos {
 
 const productos = JSON.parse(localStorage.getItem("producto")) || [];
 
-productos.push( new Productos("A1", "almohadon andino", "almohadones", 2500, "blanco", 10, 0));
-productos.push( new Productos("CM1","cestos organizadores multiusos","cestos", 800,"avellana", 25,0));
-productos.push( new Productos("C1", "paño cortina Gasa", "corinas", 3900, "verde seco", 0, 1));
-productos.push( new Productos("I1","individual austero x6","individuales", 3000,"crudo",5,0));
-productos.push( new Productos("M1", "manta colmena", "mantas", 2500, "elefante", 2, 0));
-productos.push( new Productos("MT1", "mantel austero", "manteles", 5000, "arena", 2, 1));
-productos.push( new Productos("MT2", "mantel bohemio", "manteles", 5500, "rosa viejo", 15, 0));
+productos.push( new Productos("A1", "almohadon andino", "almohadones", 2500, "blanco", 10, "0"));
+productos.push( new Productos("CM1","cestos organizadores multiusos","cestos", 800,"avellana", 25,"0"));
+productos.push( new Productos("C1", "paño cortina Gasa", "corinas", 3900, "verde seco", 0, "1"));
+productos.push( new Productos("I1","individual austero x6","individuales", 3000,"crudo",5,"0"));
+productos.push( new Productos("M1", "manta colmena", "mantas", 2500, "elefante", 2, "0"));
+productos.push( new Productos("MT1", "mantel austero", "manteles", 5000, "arena", 2, "1"));
+productos.push( new Productos("MT2", "mantel bohemio", "manteles", 5500, "rosa viejo", 15, "0"));
 
 const productosEnStock = [];
 
 const productosEnLiquidacion = [];
 
 //funciones
-
-
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-    agregarProducto();
-  });
-  
-    function agregarProducto() {
-    const codigo = document.getElementById('formCodigo').value;
-    const nombre = document.getElementById('formNombre').value;
-    const categoria = document.getElementById('formCategoria').value;
-    const precio = document.getElementById('formPrecio').value;
-    const color = document.getElementById('formColor').value;
-    const stock = document.getElementById('formStock').value;
-    const sale = document.getElementById('formSale').value;
-    const nuevoProducto = new Productos(codigo, nombre, categoria, precio, color, stock, sale);
-    productos.push(nuevoProducto);
-
-
-
-    //Agrego al LocalStorage
-    localStorage.setItem('productos', JSON.stringify(productos));
-    formulario.reset();
-    return productos;
-}
-
-
-    
-  
+ 
 
 //btn limpiar
 cleanVisor.addEventListener("click", () => {
@@ -138,10 +110,12 @@ newProducto.addEventListener("click", () => {
                 <label class="visually-hidden" for="specificSizeSelect">Categoría</label>
                 <select class="form-select" id="formSale" required>
                     <option selected>Elige...</option>
-                    <option value="1">En liquidación</option>
-                    <option value="0">En venta</option>
+                    <option value=1>En liquidación</option>
+                    <option value=0>En venta</option>
                 </select>
-            </div>
+                </div>
+
+                
                 
             <div class="col-12">
             <button class="btn btn-primary" type="submit">Crear</button>
@@ -245,4 +219,32 @@ consultarCatalogo.addEventListener("click", () => {
     // Obtener la información del stock de los productos
     const stock = verCatalogo();  
 });
+
+
+
+
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+    agregarProducto();
+  });
+  
+    function agregarProducto() {
+    const codigo = document.getElementById('formCodigo').value;
+    const nombre = document.getElementById('formNombre').value;
+    const categoria = document.getElementById('formCategoria').value;
+    const precio = document.getElementById('formPrecio').value;
+    const color = document.getElementById('formColor').value;
+    const stock = document.getElementById('formStock').value;
+    const sale = document.getElementById('formSale').value;
+    const nuevoProducto = new Productos(codigo, nombre, categoria, precio, color, stock, sale);
+    productos.push(nuevoProducto);
+
+
+
+    //Agrego al LocalStorage
+    localStorage.setItem('productos', JSON.stringify(productos));
+    formulario.reset();
+    return productos;
+}
 

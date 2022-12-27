@@ -1,0 +1,54 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+
+.productos {
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 3rem;
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+footer {
+    background-color: #ededee;
+    color: #29304a;
+    padding: 1em;
+    font-size: 17px;
+    padding: 3%;
+
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 0;
+    align-content: space-between;
+    justify-content: center;
+    justify-items: center;
+}
+
+body {
+
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
