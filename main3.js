@@ -195,7 +195,7 @@ function verCatalogo() {
     visorAPintar.innerHTML = ``;
     formulario.innerHTML = ``;
 
-    let catalogo = JSON.parse(localStorage.getItem("productos"));
+    let catalogo = JSON.parse(localStorage.getItem("productos")) || productos;
     
     catalogo.forEach((productos) => {
     visorAPintar.innerHTML += `
